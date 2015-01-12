@@ -1,3 +1,5 @@
+(function(){
+
 angular.module('chordPandora.home', [])
 
 .controller('HomeCtrl', homeCtrl)
@@ -5,12 +7,12 @@ angular.module('chordPandora.home', [])
 function homeCtrl() {
 	var vm = this;
 	
-	vm.chord_pressed = chordPressed;
+	vm.chordPressed = chordPressed;
 	
+   vm.chordPressed();	
 	
 	function chordPressed() {
-     cordova.plugins.Keyboard.show;	
-	
+     cordova.plugins.Keyboard.show();		
 	}
-
 }
+})()
