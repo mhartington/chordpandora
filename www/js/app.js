@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('chordPandora', ['ionic'])
+angular.module('chordPandora', ['ionic', 'chordPandora.home'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -28,7 +28,7 @@ function router($stateProvider, $urlRouterProvider) {
   	 url: '/',
     views: {
       "header": {templateUrl: 'templates/header.html'},    
-      "body": {templateUrl: 'templates/home.html'}    
+      "body": {templateUrl: 'templates/home.html', controller: "HomeCtrl", controllerAs: "home"}    
     }
   })
 
