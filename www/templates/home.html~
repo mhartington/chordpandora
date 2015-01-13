@@ -1,22 +1,3 @@
+<ion-content>
 
-  <div class="row responsive-sm text-center">
-    <div class="col">
-      <br>
-      <br>
-      <br>
-      <br>
-      <ion-scroll hide-on-scroll="true"  direction="x" class="wide-as-needed">
-        <note pitch="'A'"></note>      
-  
-
-      
-      </ion-scroll>  
-      
-      <ion-scroll hide-on-scroll="true" direction="x" class="wide-as-needed">
-        <a>Major</a>   
-        <a>Minor</a>   
-        <a>Augmented</a>   
-        <a>Diminished</a>   
-      </ion-scroll>  
-    </div>
-  </div>
+</ion-content>
