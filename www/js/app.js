@@ -6,31 +6,29 @@
 angular.module('chordPandora', ['ionic', 'ngCordova', 'chordPandora.home'])
 
 .run(function($ionicPlatform) {
-  $ionicPlatform.ready(function() {
+    $ionicPlatform.ready(function() {
 
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
-    if(window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-    }
-    if(window.StatusBar) {
-      StatusBar.styleDefault();
-    }
-  });
+        // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+        // for form inputs)
+        if (window.cordova && window.cordova.plugins.Keyboard) {
+            cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+        }
+        if (window.StatusBar) {
+            StatusBar.styleDefault();
+        }
+    });
 })
 
 .config(router);
 
 
 function router($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.otherwise("/");
-  
-  $stateProvider.state('home', {
-  	 url: '/',
-    views: {
-      "header": {templateUrl: 'templates/header.html'},    
-      "body": {templateUrl: 'templates/home.html', controller: "HomeCtrl", controllerAs: "home"}    
-    }
-  })
+    $urlRouterProvider.otherwise("/");
 
+    $stateProvider.state('home', {
+        url: '/',
+        templateUrl: 'templates/home.html',
+        controller: "HomeCtrl",
+        controllerAs: "home"
+    })
 }

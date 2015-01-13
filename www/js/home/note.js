@@ -1,43 +1,42 @@
-(function(){
+(function() {
+    angular.module('chordPandora.home')
+        .directive('note', note)
 
-angular.module('chordPandora.home')
+    function note() {
+        var directive = {
+            restrict: 'EA',
+            link: link,
+            scope: {
+                pitch: '='
+            },
+            templateUrl: 'templates/directives/note.html',
+            controllerAs: 'vm',
+            controller: NoteCtrl
+        };
+        return directive;
 
-.directive('note', note)
+        function link(scope, el, attr, ctrl) {
+            el[0].click(function() {
+                el[0].addClass('positive')
+            })
+        }
+    }
 
-function note() {	
-   var directive = {
-	  restrict: 'EA',
-	  link: link,
-	  scope: {pitch: '='},
-	  templateUrl: 'templates/directives/note.html',
-	  controllerAs: 'vm',
-	  controller: NoteCtrl
-	};
+    NoteCtrl.$inject = ['$scope'];
 
-   return directive;
-      
-   function link(scope, el, attr, ctrl) {
-     el[0].click(function() {
-       el[0].addClass('positive')     
-     })
-	}
-}
+    function NoteCtrl($scope) {
+        // Injecting $scope just for comparison
+        var vm = this;
 
-NoteCtrl.$inject = ['$scope'];
+        vm.pitch = $scope.pitch;
 
-function NoteCtrl($scope) {
-  // Injecting $scope just for comparison
-  var vm = this;
-  
-  vm.pitch = $scope.pitch;
-  
-  vm.clicked_note = false;
-  
-  vm.clicked = clicked;
-  
-  function clicked() {
-    vm.clicked_note = !vm.clicked_note;  
-  
-  }
-}
+        vm.clicked_note = false;
+
+        vm.clicked = clicked;
+
+        function clicked() {
+            vm.clicked_note = !vm.clicked_note;
+
+        }
+    }
 })()
