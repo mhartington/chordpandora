@@ -1,3 +1,22 @@
 #chord {
-  font-size:86px;
+  font-size:126px;
 }
+
+.wide-as-needed {
+  overflow: scroll;
+  white-space: nowrap;
+  height: 200px;
+  padding-top: 20px;
+  overflow-y:hidden;
+}
+
+.wide-as-needed a{
+  font-size: 50px;
+  margin-right: 40%; 
+  margin-left: 40%; 
+}
+
+.scroll { 
+  min-width: 30%;
+}
+

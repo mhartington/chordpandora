@@ -4,15 +4,12 @@ angular.module('chordPandora.home', [])
 
 .controller('HomeCtrl', homeCtrl)
 
-function homeCtrl() {
+homeCtrl.$inject = ['$window'];
+
+function homeCtrl($window) {
 	var vm = this;
 	
-	vm.chordPressed = chordPressed;
 	
-   vm.chordPressed();	
-	
-	function chordPressed() {
-     //cordova.plugins.Keyboard.show();		
-	}
+
 }
 })()

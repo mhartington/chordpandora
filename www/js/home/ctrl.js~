@@ -4,15 +4,19 @@ angular.module('chordPandora.home', [])
 
 .controller('HomeCtrl', homeCtrl)
 
-function homeCtrl() {
+homeCtrl.$inject = ['$window'];
+
+function homeCtrl($window) {
 	var vm = this;
 	
-	vm.chordPressed = chordPressed;
 	
-   vm.chordPressed();	
+	vm.scrollToCenter = scrollToCenter;
 	
-	function chordPressed() {
-     cordova.plugins.Keyboard.show();		
-	}
+	
+
+   function scrollToCenter() {
+console.log(1)
+     $window.scroll(1550, 0);   
+   }
 }
 })()

@@ -1,0 +1,1 @@
+<div ng-click="clicked()" ng-class="{'positive': vm.clicked}">{{vm.pitch}}</div>
